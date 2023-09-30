@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace clicker_2
 {
-    public partial class Form1 : Form
+    public partial class mainGame : Form
     {
-        public Form1()
+        public mainGame()
         {
             InitializeComponent();
+        }
+
+        private void mainGame_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainGame_formClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
     }
 }
