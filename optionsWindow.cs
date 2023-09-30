@@ -29,6 +29,7 @@ namespace clicker_2
             {
                 ServicePointManager.Expect100Continue = true;
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                client.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore);
                 try 
                 { 
                     onlineVerLabel.Text = client.DownloadString("https://raw.githubusercontent.com/remona-minett/rm-Clicker-2/master/ver.txt"); 

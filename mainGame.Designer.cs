@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(296, 331);
             this.Name = "mainGame";
-            this.Text = "Clicker 2 - Unrelease 1";
+            this.Text = "Clicker 2 Alpha";
             this.Load += new System.EventHandler(this.mainGame_Load);
             this.ResumeLayout(false);
 
