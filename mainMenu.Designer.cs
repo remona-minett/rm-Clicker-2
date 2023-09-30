@@ -35,6 +35,7 @@
             // 
             // loadGame
             // 
+            this.loadGame.ForeColor = System.Drawing.SystemColors.Control;
             this.loadGame.Location = new System.Drawing.Point(93, 41);
             this.loadGame.Name = "loadGame";
             this.loadGame.Size = new System.Drawing.Size(75, 23);
@@ -45,6 +46,7 @@
             // 
             // newGame
             // 
+            this.newGame.ForeColor = System.Drawing.SystemColors.Control;
             this.newGame.Location = new System.Drawing.Point(93, 12);
             this.newGame.Name = "newGame";
             this.newGame.Size = new System.Drawing.Size(75, 23);
@@ -55,6 +57,7 @@
             // 
             // optionsButton
             // 
+            this.optionsButton.ForeColor = System.Drawing.SystemColors.Control;
             this.optionsButton.Location = new System.Drawing.Point(93, 70);
             this.optionsButton.Name = "optionsButton";
             this.optionsButton.Size = new System.Drawing.Size(75, 23);
@@ -67,12 +70,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(261, 102);
             this.Controls.Add(this.optionsButton);
             this.Controls.Add(this.newGame);
             this.Controls.Add(this.loadGame);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "mainMenu";
             this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Clicker 2 Main Menu";
             this.ResumeLayout(false);
 

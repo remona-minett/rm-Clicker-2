@@ -46,6 +46,6 @@ namespace clicker_2
  * Originally created by Remona Minett, 30 Sep 2023
  * Windows Forms Application (WFA)
  * .NET Framework 4.7.2
- * Sequel to rm-Clicker, a spiritual demo to Clicker 2.
+ * Sequel to rm-Clicker, which turned out to be a demo in the eye of Clicker 2.
  * 
  */

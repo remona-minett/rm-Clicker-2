@@ -40,6 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(12, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
@@ -49,6 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(12, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
@@ -57,6 +59,7 @@
             // 
             // checkButton
             // 
+            this.checkButton.ForeColor = System.Drawing.SystemColors.Control;
             this.checkButton.Location = new System.Drawing.Point(194, 12);
             this.checkButton.Name = "checkButton";
             this.checkButton.Size = new System.Drawing.Size(101, 23);
@@ -67,6 +70,7 @@
             // 
             // goOnlineButton
             // 
+            this.goOnlineButton.ForeColor = System.Drawing.SystemColors.Control;
             this.goOnlineButton.Location = new System.Drawing.Point(194, 42);
             this.goOnlineButton.Name = "goOnlineButton";
             this.goOnlineButton.Size = new System.Drawing.Size(101, 23);
@@ -77,8 +81,9 @@
             // 
             // linkLabel1
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.ActiveLinkColor = System.Drawing.SystemColors.Control;
+            this.linkLabel1.ForeColor = System.Drawing.SystemColors.Control;
+            this.linkLabel1.LinkColor = System.Drawing.SystemColors.Control;
             this.linkLabel1.LinkVisited = true;
             this.linkLabel1.Location = new System.Drawing.Point(12, 68);
             this.linkLabel1.Name = "linkLabel1";
@@ -87,12 +92,13 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Made with love by Remona Minett in 2023";
             this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.VisitedLinkColor = System.Drawing.SystemColors.Control;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(100, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
@@ -103,17 +109,18 @@
             // onlineVerLabel
             // 
             this.onlineVerLabel.AutoSize = true;
+            this.onlineVerLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.onlineVerLabel.Location = new System.Drawing.Point(100, 47);
             this.onlineVerLabel.Name = "onlineVerLabel";
-            this.onlineVerLabel.Size = new System.Drawing.Size(73, 13);
+            this.onlineVerLabel.Size = new System.Drawing.Size(86, 13);
             this.onlineVerLabel.TabIndex = 6;
-            this.onlineVerLabel.Text = "error - no net?";
-            this.onlineVerLabel.Visible = false;
+            this.onlineVerLabel.Text = "Not checked yet";
             // 
             // optionsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(307, 100);
             this.Controls.Add(this.onlineVerLabel);
             this.Controls.Add(this.label3);
@@ -122,7 +129,9 @@
             this.Controls.Add(this.checkButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "optionsWindow";
+            this.ShowIcon = false;
             this.Text = "Options";
             this.Load += new System.EventHandler(this.optionsWindow_Load);
             this.ResumeLayout(false);
