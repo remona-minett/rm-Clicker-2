@@ -5,10 +5,10 @@ clicker game made in c# with wfa.
 a simple clicker game, all you need to do is launch it and start having fun.
 
 # how to play
-- not yet released, but probably by clicking.
+not yet released, but probably by clicking.
 
 # install instructions
-- not yet released, but probably by clicking the `.exe`.
+not yet released, but probably by clicking the `.exe`.
 
 # system requirements
 - windows 7 sp1 or later.
