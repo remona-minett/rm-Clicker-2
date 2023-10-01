@@ -55,15 +55,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.vanityupgrades = new System.Windows.Forms.GroupBox();
+            this.vanityLabel = new System.Windows.Forms.Label();
+            this.vanityUpgrade = new System.Windows.Forms.Button();
             this.batbar = new System.Windows.Forms.ProgressBar();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.batbarvalue = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.vanityUpgrade = new System.Windows.Forms.Button();
-            this.vanityLabel = new System.Windows.Forms.Label();
             this.chargebar1 = new System.Windows.Forms.ProgressBar();
             this.label18 = new System.Windows.Forms.Label();
             this.c1maxcharge = new System.Windows.Forms.Label();
@@ -162,6 +162,7 @@
             // 
             // c1u3
             // 
+            this.c1u3.Enabled = false;
             this.c1u3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.c1u3.Location = new System.Drawing.Point(169, 77);
             this.c1u3.Name = "c1u3";
@@ -308,6 +309,7 @@
             // 
             // c2u3
             // 
+            this.c2u3.Enabled = false;
             this.c2u3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.c2u3.Location = new System.Drawing.Point(169, 77);
             this.c2u3.Name = "c2u3";
@@ -380,12 +382,35 @@
             this.vanityupgrades.TabStop = false;
             this.vanityupgrades.Text = "???";
             // 
+            // vanityLabel
+            // 
+            this.vanityLabel.AutoSize = true;
+            this.vanityLabel.Location = new System.Drawing.Point(6, 24);
+            this.vanityLabel.Name = "vanityLabel";
+            this.vanityLabel.Size = new System.Drawing.Size(25, 13);
+            this.vanityLabel.TabIndex = 1;
+            this.vanityLabel.Text = "???";
+            // 
+            // vanityUpgrade
+            // 
+            this.vanityUpgrade.Enabled = false;
+            this.vanityUpgrade.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.vanityUpgrade.Location = new System.Drawing.Point(165, 19);
+            this.vanityUpgrade.Name = "vanityUpgrade";
+            this.vanityUpgrade.Size = new System.Drawing.Size(75, 23);
+            this.vanityUpgrade.TabIndex = 0;
+            this.vanityUpgrade.Text = "???";
+            this.vanityUpgrade.UseVisualStyleBackColor = true;
+            // 
             // batbar
             // 
             this.batbar.ForeColor = System.Drawing.Color.LimeGreen;
             this.batbar.Location = new System.Drawing.Point(343, 25);
+            this.batbar.Maximum = 10;
             this.batbar.Name = "batbar";
             this.batbar.Size = new System.Drawing.Size(423, 23);
+            this.batbar.Step = 1;
+            this.batbar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.batbar.TabIndex = 9;
             // 
             // label11
@@ -415,14 +440,14 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "Battery Bar | Charge Status";
             // 
-            // label14
+            // batbarvalue
             // 
-            this.label14.Location = new System.Drawing.Point(9, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(328, 23);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "batbar current capacity";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.batbarvalue.Location = new System.Drawing.Point(9, 25);
+            this.batbarvalue.Name = "batbarvalue";
+            this.batbarvalue.Size = new System.Drawing.Size(328, 23);
+            this.batbarvalue.TabIndex = 13;
+            this.batbarvalue.Text = "batbar current capacity";
+            this.batbarvalue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -443,33 +468,17 @@
             this.label16.Text = "unused_label16";
             this.label16.Visible = false;
             // 
-            // vanityUpgrade
-            // 
-            this.vanityUpgrade.Enabled = false;
-            this.vanityUpgrade.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.vanityUpgrade.Location = new System.Drawing.Point(165, 19);
-            this.vanityUpgrade.Name = "vanityUpgrade";
-            this.vanityUpgrade.Size = new System.Drawing.Size(75, 23);
-            this.vanityUpgrade.TabIndex = 0;
-            this.vanityUpgrade.Text = "???";
-            this.vanityUpgrade.UseVisualStyleBackColor = true;
-            // 
-            // vanityLabel
-            // 
-            this.vanityLabel.AutoSize = true;
-            this.vanityLabel.Location = new System.Drawing.Point(6, 24);
-            this.vanityLabel.Name = "vanityLabel";
-            this.vanityLabel.Size = new System.Drawing.Size(25, 13);
-            this.vanityLabel.TabIndex = 1;
-            this.vanityLabel.Text = "???";
-            // 
             // chargebar1
             // 
             this.chargebar1.ForeColor = System.Drawing.Color.Black;
             this.chargebar1.Location = new System.Drawing.Point(12, 83);
+            this.chargebar1.Maximum = 10;
             this.chargebar1.Name = "chargebar1";
             this.chargebar1.Size = new System.Drawing.Size(754, 23);
+            this.chargebar1.Step = 1;
+            this.chargebar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.chargebar1.TabIndex = 16;
+            this.chargebar1.Click += new System.EventHandler(this.chargebar1_Click);
             // 
             // label18
             // 
@@ -547,9 +556,13 @@
             // 
             this.chargebar2.ForeColor = System.Drawing.Color.Black;
             this.chargebar2.Location = new System.Drawing.Point(12, 149);
+            this.chargebar2.Maximum = 10;
             this.chargebar2.Name = "chargebar2";
             this.chargebar2.Size = new System.Drawing.Size(754, 23);
+            this.chargebar2.Step = 1;
+            this.chargebar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.chargebar2.TabIndex = 22;
+            this.chargebar2.Click += new System.EventHandler(this.chargebar2_Click);
             // 
             // vanityShowButton
             // 
@@ -747,7 +760,7 @@
             this.Controls.Add(this.chargebar1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.batbarvalue);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -811,7 +824,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label batbarvalue;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label vanityLabel;

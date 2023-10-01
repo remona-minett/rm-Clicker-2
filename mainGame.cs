@@ -14,6 +14,11 @@ namespace clicker_2
     {
         bool shopOpen = false;
         bool vanityOpen = false;
+
+        // click charge
+        int charge1clickfill= 1; int charge2clickfill = 1;
+        //
+
         public mainGame()
         {
             InitializeComponent();
@@ -22,7 +27,7 @@ namespace clicker_2
         private void mainGame_Load(object sender, EventArgs e)
         {
             Size = new Size(800, 300);
-            //startThreads();
+            startThreads();
         }
 
         private void shopRevealButton_Click(object sender, EventArgs e)
@@ -62,34 +67,82 @@ namespace clicker_2
 
         private void startThreads()
         {
-            batteryBar();
-            chargeBar1();
-            chargeBar2();
-            upgradeShop();
+            var batteryBarThread = new Thread(batteryBar); batteryBarThread.IsBackground = true; batteryBarThread.Start();
+            var chargeBar1Thread = new Thread(chargeBar1); chargeBar1Thread.IsBackground = true; chargeBar1Thread.Start();
+            var chargeBar2Thread = new Thread(chargeBar2); chargeBar2Thread.IsBackground = true; chargeBar2Thread.Start();
+            var upgradeShopThread = new Thread(upgradeShop); upgradeShopThread.IsBackground = true; upgradeShopThread.Start();
         }
 
         private void batteryBar()
         {
             for (; ; )
             {
-                var v = 0;
-                // logic needs to include discharge upgrade
+                var chargeamount = 0;
+                if (chargebar1.Value != 0) chargeamount++; // discharge upgrade
+                if (chargebar2.Value != 0) chargeamount++; // discharge upgrade
+                Invoke((MethodInvoker)delegate
+                {
+                    batbar.Step = chargeamount;
+                    batbar.PerformStep();
+                    batbarvalue.Text = batbar.Value.ToString();
+                });
+                Thread.Sleep(1000);
             }
         }
 
         private void chargeBar1()
         {
-
+            for (; ; )
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    if (chargebar1.Value != 0)
+                    {
+                        if (batbar.Value != batbar.Maximum) // battery full = pause
+                        {
+                            chargebar1.Step = -1; // discharge upgrade
+                            chargebar1.PerformStep();
+                        }
+                    }
+                });
+                Thread.Sleep(1000);
+            }
         }
 
         private void chargeBar2()
         {
-
+            for (; ; )
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    if (chargebar2.Value != 0)
+                    {
+                        if (batbar.Value != batbar.Maximum)
+                        {
+                            chargebar2.Step = -1; // discharge upgrade
+                            chargebar2.PerformStep();
+                        }
+                    }
+                });
+                Thread.Sleep(1000);
+            }
         }
 
         private void upgradeShop()
         {
 
+        }
+
+        private void chargebar1_Click(object sender, EventArgs e)
+        {
+            chargebar1.Step = charge1clickfill;
+            chargebar1.PerformStep();
+        }
+
+        private void chargebar2_Click(object sender, EventArgs e)
+        {
+            chargebar2.Step = charge2clickfill;
+            chargebar2.PerformStep();
         }
     }
 }
