@@ -167,6 +167,7 @@
             this.c1u4.TabIndex = 0;
             this.c1u4.Text = "c1u4";
             this.c1u4.UseVisualStyleBackColor = true;
+            this.c1u4.Click += new System.EventHandler(this.c1u4_Click);
             // 
             // c1u3
             // 
@@ -179,6 +180,7 @@
             this.c1u3.TabIndex = 0;
             this.c1u3.Text = "c1u3";
             this.c1u3.UseVisualStyleBackColor = true;
+            this.c1u3.Click += new System.EventHandler(this.c1u3_Click);
             // 
             // c1u2
             // 
@@ -191,6 +193,7 @@
             this.c1u2.TabIndex = 1;
             this.c1u2.Text = "c1u2";
             this.c1u2.UseVisualStyleBackColor = true;
+            this.c1u2.Click += new System.EventHandler(this.c1u2_Click);
             // 
             // c1u1
             // 

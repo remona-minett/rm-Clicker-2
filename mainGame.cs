@@ -33,6 +33,7 @@ namespace clicker_2
         {
             Size = new Size(800, 300);
             startThreads();
+            // insert listener for `d` key for `d`ebug options which proffers a panel of overrides
         }
 
         private void shopRevealButton_Click(object sender, EventArgs e)
@@ -78,7 +79,7 @@ namespace clicker_2
             var batteryBarThread = new Thread(batteryBar) { IsBackground = true }; batteryBarThread.Start();
             var chargeBar1Thread = new Thread(chargeBar1) { IsBackground = true }; chargeBar1Thread.Start();
             var chargeBar2Thread = new Thread(chargeBar2) { IsBackground = true }; chargeBar2Thread.Start();
-            var upgradeShopThread = new Thread(upgradeShop) { IsBackground = true }; upgradeShopThread.Start();
+            upgradeShop();
         }
 
         private void batteryBar()
@@ -140,15 +141,32 @@ namespace clicker_2
 
         private void upgradeShop() // index +1 for pricing only. call upgradeshop to recalculate values on click of upgrade button.
         {
-            // cb1 upgrade maths
+            // behaviour
             chargebar1.Maximum = 10 + (c1u1count * 10); // bar size
             charge1clickfill = 1 + (c1u2count); // click power
-            // cb2 upgrade maths
             chargebar2.Maximum = 10 + (c2u1count * 10);
             charge2clickfill = 1 + (c2u2count);
-
             // cXu3 math done in chargebar and batbar calculations
             // cXu4 math done in chargebar calculations
+            // pricing, 2nd cb intended to be 2x price to disjoint upgrades
+            var c1u1price = (20 * (c1u1count + 1)).ToString();
+            var c2u1price = (40 * (c2u1count + 1)).ToString();
+            var c1u2price = (40 * (c1u2count + 1)).ToString();
+            var c2u2price = (80 * (c2u2count + 1)).ToString();
+            var c1u3price = (100 * (c1u3count + 1)).ToString();
+            var c2u3price = (200 * (c2u3count + 1)).ToString();
+            var c1u4price = (200 * (c1u4count + 1)).ToString();
+            var c2u4price = (400 * (c2u4count + 1)).ToString();
+            var bu1price = batbar.Maximum.ToString();
+            // var bu2price = 
+            c1u1.Text = c1u1price; c2u1.Text = c2u1price;
+            c1u2.Text = c1u2price; c2u2.Text = c2u2price;
+            c1u3.Text = c1u3price; c2u3.Text = c2u3price;
+            c1u4.Text = c1u4price; c2u4.Text = c2u4price;
+            bu1.Text = bu1price; // always the max capacity
+            // bu2.Text = bu2price;
+            // vanityUnlock.Text = "???" // doesn't need maths since it is one-time
+            return;
         }
 
         private void chargebar1_Click(object sender, EventArgs e)
@@ -165,7 +183,35 @@ namespace clicker_2
 
         private void c1u1_Click(object sender, EventArgs e)
         {
-            // add to purchase count, then call upgradeshop to reprice and recalculate upgrades. freeze the button for a tik after clicking to prevent bypassing checks and allow time for the process to tick.
+            // add to purchase count, then call upgradeshop to reprice and recalculate upgrades. freeze the button until return after clicking to prevent bypassing checks and allow time for the process to tick.
+            c1u1.Enabled = false;
+            c1u1count++;
+            upgradeShop();
+            c1u1.Enabled = true;
+        }
+
+        private void c1u2_Click(object sender, EventArgs e)
+        {
+            c1u2.Enabled = false;
+            c1u2count++;
+            upgradeShop();
+            c1u2.Enabled = true;
+        }
+
+        private void c1u3_Click(object sender, EventArgs e)
+        {
+            c1u3.Enabled = false;
+            c1u3count++;
+            upgradeShop();
+            c1u3.Enabled = true;
+        }
+
+        private void c1u4_Click(object sender, EventArgs e)
+        {
+            c1u4.Enabled = false;
+            c1u4count++;
+            upgradeShop();
+            c1u4.Enabled = true;
         }
     }
 }
