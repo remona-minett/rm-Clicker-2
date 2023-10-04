@@ -491,7 +491,7 @@
             this.batbarvalue.Name = "batbarvalue";
             this.batbarvalue.Size = new System.Drawing.Size(437, 28);
             this.batbarvalue.TabIndex = 13;
-            this.batbarvalue.Text = "batbar current capacity";
+            this.batbarvalue.Text = "batbar current charge";
             this.batbarvalue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15

@@ -92,7 +92,7 @@ namespace clicker_2
                 {
                     batbar.Step = chargeamount;
                     batbar.PerformStep();
-                    batbarvalue.Text = batbar.Value.ToString();
+                    batbarvalue.Text = batbar.Value.ToString(); // write current charge
                 });
                 Thread.Sleep(1000);
             }
