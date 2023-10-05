@@ -313,6 +313,7 @@
             this.c2u1.TabIndex = 2;
             this.c2u1.Text = "c2u1";
             this.c2u1.UseVisualStyleBackColor = true;
+            this.c2u1.Click += new System.EventHandler(this.c2u1_Click);
             // 
             // c2u4
             // 
@@ -325,6 +326,7 @@
             this.c2u4.TabIndex = 4;
             this.c2u4.Text = "c2u4";
             this.c2u4.UseVisualStyleBackColor = true;
+            this.c2u4.Click += new System.EventHandler(this.c2u4_Click);
             // 
             // c2u2
             // 
@@ -337,6 +339,7 @@
             this.c2u2.TabIndex = 3;
             this.c2u2.Text = "c2u2";
             this.c2u2.UseVisualStyleBackColor = true;
+            this.c2u2.Click += new System.EventHandler(this.c2u2_Click);
             // 
             // c2u3
             // 
@@ -349,6 +352,7 @@
             this.c2u3.TabIndex = 5;
             this.c2u3.Text = "c2u3";
             this.c2u3.UseVisualStyleBackColor = true;
+            this.c2u3.Click += new System.EventHandler(this.c2u3_Click);
             // 
             // bu1
             // 
@@ -361,6 +365,7 @@
             this.bu1.TabIndex = 6;
             this.bu1.Text = "bu1";
             this.bu1.UseVisualStyleBackColor = true;
+            this.bu1.Click += new System.EventHandler(this.bu1_Click);
             // 
             // bu2
             // 
@@ -444,6 +449,7 @@
             this.vanityUnlock.TabIndex = 0;
             this.vanityUnlock.Text = "???";
             this.vanityUnlock.UseVisualStyleBackColor = true;
+            this.vanityUnlock.Click += new System.EventHandler(this.vanityUnlock_Click);
             // 
             // batbar
             // 

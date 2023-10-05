@@ -213,5 +213,50 @@ namespace clicker_2
             upgradeShop();
             c1u4.Enabled = true;
         }
+
+        private void c2u1_Click(object sender, EventArgs e)
+        {
+            c2u1.Enabled = false;
+            c2u1count++;
+            upgradeShop();
+            c2u1.Enabled = true;
+        }
+
+        private void c2u2_Click(object sender, EventArgs e)
+        {
+            c2u2.Enabled = false;
+            c2u2count++;
+            upgradeShop();
+            c2u2.Enabled = true;
+        }
+
+        private void c2u3_Click(object sender, EventArgs e)
+        {
+            c2u3.Enabled = false;
+            c2u3count++;
+            upgradeShop();
+            c2u3.Enabled = true;
+        }
+
+        private void c2u4_Click(object sender, EventArgs e)
+        {
+            c2u4.Enabled = false;
+            c2u4count++;
+            upgradeShop();
+            c2u4.Enabled = true;
+        }
+
+        private void bu1_Click(object sender, EventArgs e)
+        {
+            bu1.Enabled = false;
+            bu1count++;
+            upgradeShop();
+            bu1.Enabled = true;
+        }
+
+        private void vanityUnlock_Click(object sender, EventArgs e)
+        {
+            // process vanity code here
+        }
     }
 }
